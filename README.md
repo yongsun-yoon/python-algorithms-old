@@ -1,2 +1,3 @@
-# Leetcode Solutions
-Leetcode Solutions
+# Algorithms
+
+Key algorithms and solutions for coding test
