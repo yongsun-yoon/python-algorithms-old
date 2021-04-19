@@ -34,5 +34,24 @@ def cocktail_shaker_sort(arr):
     return arr
 
 
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n-1):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
+
+def insertion_sort(arr):
+    n = len(arr)
+    for i in range(1, n):
+        for j in range(i, 0, -1):
+            if arr[j] < arr[j-1]:
+                arr[j-1], arr[j] = arr[j], arr[j-1]
+    return arr
+
 if __name__ == '__main__':
-    print(cocktail_shaker_sort([1, 2, 3]))
+    print(insertion_sort([1, 0, 4, 2, 7]))
