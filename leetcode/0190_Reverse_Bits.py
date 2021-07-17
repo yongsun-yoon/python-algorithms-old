@@ -1,8 +1,5 @@
 class Solution:
     def reverseBits(self, n: int) -> int:
-        n = bin(n)[2:]
-        if len(n) < 32:
-            n = '0' * (32 - len(n)) + n
-
+        n = f'{n:032b}'
         n = n[::-1]
         return int(n, 2)
