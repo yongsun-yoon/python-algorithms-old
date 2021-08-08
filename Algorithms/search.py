@@ -12,7 +12,7 @@ def linear_search(arr, key):
 def binary_search(arr, key):
     # arr.sort()
     l, r = 0, len(arr)-1
-    while r >= l:
+    while l <= r:
         c = (l + r) // 2
         if arr[c] == key:
             return c
