@@ -1,14 +1,16 @@
 from typing import List
 
 class Solution:
-    def canThreePartsEqualSum(self, A: List[int]) -> bool:
-        avg, rmd = divmod(sum(A), 3)
-        part, cnt = 0, 0
+    def canThreePartsEqualSum(self, arr: List[int]) -> bool:
+        avg, remain = divmod(sum(arr), 3)
+        if remain: return False
         
-        for a in A:
-            part += a
-            if part == avg:
-                part = 0
+        curr, cnt = 0, 0
+        for i in arr:
+            curr += i
+            if curr == avg:
                 cnt += 1
-
-        return (not rmd) and (cnt >= 3)
+                curr = 0
+        
+        # if avg and curr % avg: return False
+        return cnt >= 3
